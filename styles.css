@@ -1,0 +1,518 @@
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      background-image: url('./img/panoramica1.webp'); 
+      background-attachment: fixed; 
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    /* Barra de navegación */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #1b5e20;
+      color: #fff;
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 20px;
+      z-index: 1000;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 28px;
+      height: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1100;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background: white; 
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    /* Animación al abrir */
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #c8e6c9;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+    
+
+    /* Secciones */
+    section {
+      min-height: 100vh;
+      padding: 100px 20px 40px; 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    #presentacion h1{
+      color: #1b5e20;
+      font-weight: bold;
+      margin: 0 auto 50px auto;
+    }
+
+    #presentacion,#horarios,#ubicacion{
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #presentacion,#ubicacion{
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    #camino{
+      display: grid;
+      grid-template-columns:auto auto;
+      grid-template-areas: 
+      "logo sello"
+      "contenido contenido";
+      gap: 20px;
+      align-items: center;
+      justify-items: center;
+    }
+
+    #camino > div:nth-child(1){
+      grid-area: logo;
+    }
+
+    #camino > div:nth-child(2){
+      grid-area: sello;
+    }
+
+    #camino_content{
+      grid-area: contenido;
+      max-width: 700px; 
+    }
+
+
+    #logo_mozarabe{
+      max-width: 100%;
+      width: 250px;
+      max-height: 500px;
+      background-color: white;
+    }
+
+    #sello_farmacia{
+      width: 250px;
+    }
+
+    #horarios{
+      background-color: darkseagreen;
+    }
+
+    #guardias{
+      background-image: url(img/fondo2.webp);
+      background-size: cover;
+      background-position: center;
+    }
+
+    .farmacia-guardia-unica {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Título de la sección */
+    .titulos,.titulo-guardia {
+      text-align: center;
+      color: #2c5f2d;
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin: 0 auto 15px auto;
+      padding-bottom: 15px;
+      border-bottom: 3px solid #4caf50;
+    }
+
+    /* Tarjeta de la farmacia */
+    .farmacia-card{
+      background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+      border: 3px solid #4caf50;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .farmacia-card:hover{
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+    }
+
+    /*Servicios*/
+
+    #servicios{
+      background-image: url(img/fondo.webp);
+      background-size:cover;
+      background-position: center;
+    }
+
+    #total-servicios{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 25px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .servicio-card{
+      background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+      box-shadow: 0 4px 12px rgba(76, 175, 80, 0.15);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 20px;
+      transition: all 0.3s ease;
+      min-height: 100px;
+    }
+
+    .iconos-servicios{
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+    }
+
+    .servicio-card p {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #2c5f2d;
+      text-align: left;
+      flex-grow: 1;
+      line-height: 1.4;
+    }
+
+    #ubicacion { 
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #contenido_ubicacion{
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    #contenido_ubicacion iframe,
+    #contenido_ubicacion img {
+      max-width: 100%;  
+      border-radius: 8px; 
+    }
+
+    #contenido_ubicacion img{
+      height: auto;
+    }
+
+    .icono-social {
+      width: 18px;
+      height: 18px;
+      margin-left: 4px;
+      vertical-align: middle;
+      display: inline-block;
+    }
+
+    .icono-social path {
+      fill: currentColor;
+    }
+
+    #contacto { 
+      background: #fffde7; 
+      text-align: center;
+    }
+
+    #contacto div{
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-wrap: wrap;
+    }   
+    
+    #contacto a{
+      text-decoration: none;
+      text-align: justify;
+    }
+
+    #contacto p{
+      text-align: left;
+      max-width: 450px;
+    }
+
+    #form_contacto{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      width: 30%;
+    }
+
+   #form_contacto label{
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      width: 100%;  
+      max-width: 600px;
+    }
+
+    #form_contacto input{
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: inherit;
+      font-size: 14px;
+    }
+
+    #form_contacto textarea {
+      resize: none;              
+      width: 100%;               
+      max-width: 600px;           
+      min-height: 120px;          
+      max-height: 200px;         
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: inherit;
+      font-size: 14px;
+    }
+
+    #form_contacto button {
+      width: auto; 
+      padding: 10px 20px;   
+      margin-top: 10px;     
+      align-self: flex-start; 
+      border: none;
+      background-color: #1b5e20;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    #form_contacto button:hover {
+      background-color: #388e3c; 
+    }
+
+    h1, h2 {
+      margin-bottom: 20px;
+      width: fit-content;
+      margin: auto;
+    }
+
+    p {
+      max-width: 600px;
+      margin-bottom: 15px;
+    }
+
+    #img_interior{
+      max-width: 100%;
+      width: 700px;
+      max-height: 500px;
+
+    }
+
+  /* Estilos para validación del formulario */
+  .error-msg {
+    display: none;
+    color: #d32f2f;
+    font-size: 0.85rem;
+    margin-top: 5px;
+  }
+
+  #form_contacto input.invalido,
+  #form_contacto textarea.invalido {
+    border-color: #d32f2f;
+    background-color: #ffebee;
+  }
+
+  /* Focus accesible */
+  #form_contacto input:focus,
+  #form_contacto textarea:focus {
+    outline: none;
+    border-color: #4caf50;
+  }
+
+  #form_contacto input.invalido:focus,
+  #form_contacto textarea.invalido:focus {
+    border-color: #d32f2f;
+  }
+
+  #mensaje-exito {
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    border-left: 4px solid #4caf50;
+    font-weight: 600;
+  }
+
+  #mensaje-error {
+    background: #ffebee;
+    color: #c62828;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    border-left: 4px solid #f44336;
+    font-weight: 600;
+  }
+
+  #btn-enviar:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #1b5e20;
+    color: white;
+  }
+
+  /* Responsive */
+
+    @media (max-width: 768px) {
+
+       body {
+        background-attachment: scroll;
+
+      }
+
+      nav {
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #1b5e20;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 15px 0;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 10px;
+        text-align: center;
+        width: 100%;
+      }
+
+      #servicios{
+        background-image: url(img/fondo_movil.webp);
+      }
+
+      #guardias{
+        background-image: url(img/fondo2_movil.webp);
+      }
+
+      #form_contacto{
+        width: 75%;
+        padding-top: 35px;
+      }
+
+      #total-servicios {
+        grid-template-columns: 1fr; /* Una columna en móviles */
+        gap: 15px;
+        padding: 10px;
+      }
+      
+      .servicio-card {
+        padding: 15px;
+        min-height: 80px;
+      }
+      
+      .iconos-servicios {
+        width: 50px;
+        height: 50px;
+      }
+      
+      .servicio-card p {
+        font-size: 1rem;
+      }
+
+      #camino{
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "logo"
+          "contenido"
+          "sello";
+      }
+    }
+
+  @media (max-width: 480px) {
+    .servicio-card {
+      gap: 15px;
+      padding: 12px;
+    }
+    
+    .iconos-servicios {
+      width: 45px;
+      height: 45px;
+    }
+    
+    .servicio-card p {
+      font-size: 0.95rem;
+    }
+}
+  @media (min-width: 769px) and (max-width: 1159px) {
+  #total-servicios {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

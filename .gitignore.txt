@@ -1,0 +1,47 @@
+
+# =========================
+# ARCHIVOS SENSIBLES
+# =========================
+
+# Certificado SSL (no compartir públicamente)
+includes/cacert.pem
+
+# Cachés generados automáticamente
+includes/guardia_cache.html
+includes/guardia_datos.json
+includes/debug_*.html
+
+# =========================
+# ARCHIVOS DEL SISTEMA
+# =========================
+
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# =========================
+# ARCHIVOS TEMPORALES
+# =========================
+
+*.log
+*.tmp
+*.bak
+*~
+error_log
+php_errors.log
+
+# =========================
+# ARCHIVOS DE SERVIDOR
+# =========================
+
+.htaccess
+.htpasswd
+
+# =========================
+# NODE MODULES
+# =========================
+
+node_modules/
+package-lock.json
